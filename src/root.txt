@@ -1,0 +1,22 @@
+卷 资料盘 的文件夹 PATH 列表
+卷序列号为 0005-6146
+F:\MYPROJECT\IDEA\DGRC\SRC
+├─main
+│  ├─java
+│  │  └─sci
+│  │      └─again
+│  │          └─dgrc
+│  │              ├─controller 控制类
+│  │              ├─domain Neo4j数据实体类
+│  │              ├─entity Mysql表数据实体类
+│  │              ├─repositories 基于Jpa的DAO类
+│  │              ├─services 服务类
+│  │              ├─util 工具类
+│  │              └─DTO 数据传输类
+│  └─resources 各配置
+│      ├─static 各静态资源
+│      │  ├─css
+│      │  ├─js
+│      │  └─pictures
+│      └─templates 各页面
+└─test
