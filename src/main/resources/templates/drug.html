@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="https://vuejs.org/js/vue.min.js"></script>
+	<script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+	<link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+	<script type="text/javascript" src="http://p7xnxhjxx.bkt.clouddn.com/vis.js"></script>
+	<link rel="icon" href="http://pcmjwhw1e.bkt.clouddn.com/logo_D1352.png" type="img/x-ico" />
+	<title>Drug Searching</title>
+	<link rel="stylesheet" type="text/css" href="css/magic.css">
+
+	
+
+</head>
+
+<body>
+
+<nav class="navbar fixed-top " style="background-color: #11b000;">
+	
+	<a href="" style="text-decoration:none">
+		<span style=""><font color="white" size="6"><STRONG>GZUCM_DGRC</STRONG></font></span>
+	</a>
+</nav>
+
+<div class="searching home-section home-search d-flex justify-content-center align-items-center">
+	
+	<!-- TODO -->
+<form name="sform" class="home-search-form" action="../dgrc/search" onSubmit="scheck();return false;" accept-charset="UTF-8" method="get" style="margin-top: 2em;">
+	<!-- <input name="utf8" type="hidden" value="✓"> -->
+	<div class="search-title small-header" style="font-size: 2.0rem; ">What are you looking for?</div>
+	<div class="search-import-div">
+		<input type="text" name="title" id="input2" class="search-query" placeholder="Drug academic name" autofocus="autofocus">
+		<a href="" onClick="scheck();return false;">
+		<img src="pictures/search_mirror.png"></a>
+</div>
+<div class="form-group">
+	<label class="custom-control custom-radio">
+		<input type="radio" name="searcher" id="searcher_drugs" value="drug" class="custom-control-input searcher-category" checked="checked">
+		<span class="custom-control-indicator btn btn-sm">
+			<span class="custom-control-description" style="font-family: inherit"><font color="#dfdfdf" size="3">Drug</font></span>
+		</span>
+	</label>&emsp;
+	<label class="custom-control custom-radio">
+		<input type="radio" name="searcher" id="searcher_disease" value="disease" class="custom-control-input searcher-category">
+		<span class="custom-control-indicator btn btn-sm">
+			<span class="custom-control-description" style="font-family: inherit"><font color="#dfdfdf" size="3">Disease</font></span>
+		</span>
+	</label>&emsp;
+	<label class="custom-control custom-radio">
+		<input type="radio" name="searcher" id="searcher_drug&disease" value="check" class="custom-control-input searcher-category">
+		<span class="custom-control-indicator btn btn-sm">
+			<span class="custom-control-description" style="font-family: inherit"><font color="#dfdfdf" size="3">Drug&Disease</font></span>
+		</span></label>
+
+	</div>
+</form>
+
+</div>
+
+
+<dir class="introduction">
+	<div class="intro-logo">
+		<img src="http://pcmjwhw1e.bkt.clouddn.com/logo_D1352.png" style="max-height: 8rem;">
+	</div>
+	<div class="intro-content">
+		<h1>
+			Drug Name:&nbsp;<big><b class="text-warning">{{name}}</b></big>
+
+		</h1>
+		<hr>
+	</div>
+
+
+
+<div class="example-list">
+	<h1>Result:</h1><br><br>
+	<h2>1.The Drug-Disease relevance network map.</h2>
+	<div id="mynetwork" class="net-map"></div>
+
+	<div class="prognosis-table message-list">
+		<h2>2.The Drug-Disease prognosis data table.</h2>
+		<table class="table-hover table-bordered table-striped table-responsive">
+			<caption>Prognosis data.(Significance level α is <b class="text-danger">0.025422</b>)</caption>
+			<thead>
+				<th>#</th>
+				<th>Drug</th>
+				<th>Disease</th>
+				<th>Adjust-P</th>
+				<th>RE-gene</th>
+			</thead>
+			<tbody>
+				
+				<tr v-for="(item, index) in message_items.relevants">
+					<th scope="row">{{index+1}}</th>
+					<td>{{message_items.academicName}}</td>
+					<td>{{item.disease.academicName}}</td>
+					<td>{{item.adj_p}}</td>
+					<td>{{item.relevant_gene_num}}</td>
+				</tr>
+
+
+			</tbody>
+		</table>
+	</div>
+
+	<div class="research-table">
+		<h2>3.The completed research data table acorrding to {{name}}.</h2>
+		<table class="table-hover table-bordered table-striped table-responsive">
+			<caption style="font-size: 2.9rem;">Research data</caption>
+			<thead>
+				<th>#</th>
+				<th>Drug</th>
+				<th>Disease</th>
+				<th>Status</th>
+				<th>Title</th>
+			</thead>
+			<tbody>
+				<tr>
+					<th scope="row">1</th>
+					<td>abc</td>
+					<td>asasfas</td>
+					<td>finished</td>
+					<td>How can we be strong</td>
+				</tr>
+				<tr>
+					<th scope="row">2</th>
+					<td>abc</td>
+					<td>qwrqwrqt</td>
+					<td>approvaled for marketing</td>
+					<td>The relevance between sprite and power</td>
+				</tr>
+				<tr>
+					<th scope="row">3</th>
+					<td>abc</td>
+					<td>hjlhjhl</td>
+					<td>determined</td>
+					<td>One can be powerful only if his sprite is strong</td>
+				</tr>
+				<!-- <tr>
+					<th scope="row">{{n}}</th>
+					<td>{{drugName_r}}</td>
+					<td>{{diseaseName_r}}</td>
+					<td>{{status_r}}</td>
+					<td>{{tittle_r}}</td>
+				</tr> -->
+			</tbody>
+		</table>
+	</div>
+	</div>
+</dir>
+
+
+
+<script type="text/javascript" src="js/viscode.js"></script>
+<script type="text/javascript" src="js/private.js"></script>
+<script type="text/javascript" src="js/drug.js"></script>
+<script type="text/javascript" th:inline="javascript">
+		var drug=[[${host}]]
+	</script>
+</body>
+
+</html>

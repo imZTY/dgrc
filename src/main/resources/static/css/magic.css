@@ -1,0 +1,129 @@
+.fixed-top {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1030;
+}
+.navbar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: .2rem .5rem;
+    min-height: 8px;
+    margin-bottom: 10px;
+}
+
+.searching {
+    margin-top: 2%;
+    padding: 9%;
+    background: #282c34;
+    height: 35rem;
+    align-items: center!important;
+    justify-content: center!important;
+}
+
+.searching .small-header{
+    text-transform: uppercase;
+    color: #fff;
+    letter-spacing: .05rem;
+}
+
+.searching .search-import-div{
+	position: relative;
+	margin-bottom: 1rem;
+	box-sizing: border-box;
+	display: block;
+}
+.searching .search-query{
+    -webkit-border-radius: 0;
+    border: 0;
+    background-color: transparent;
+    border-bottom: 1px solid #aab3c1;
+    transition: border-color .15s ease-in-out;
+    font-size: 3.2rem;
+    width: 39%;
+    min-width: 34rem;
+    color: #fff;
+    -webkit-appearance: none;
+    margin: 0;
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    margin-left: 0px;
+    font-family: inherit;
+    line-height: inherit;
+}
+
+.searching .form-group{
+	margin-bottom: 1rem;
+	box-sizing: border-box;
+	display: block;
+}
+
+.introduction{
+	background-color: #fff;
+	padding: 5%;
+	box-sizing: border-box;
+    display: block;
+}
+
+.intro-logo{
+
+}
+
+.intro-content{
+	max-width: 86rem;
+    margin-bottom: 4rem;
+    box-sizing: border-box;
+    display: block;
+} 
+
+.example-list{
+	max-width: 86rem;
+	margin-left: 5%;
+	margin-bottom: 20%;
+}
+
+.vis-network {
+	padding: 3%;
+    background: #D3D3D3;
+    height: 66rem;
+    align-items: center!important;
+    justify-content: center!important;
+}
+.vis-network canvas{
+	padding: 2%;
+    background: #D3D3D3;
+    max-width: 76rem;
+    height: 47rem;
+    align-items: center!important;
+    justify-content: center!important;
+}
+
+.prognosis-table{
+    padding: 4.6rem 1.5rem;
+}
+
+.prognosis-table table{
+	min-width: 65rem;
+    min-height: 30rem;
+    font-size: 2.9rem;
+}
+
+.research-table table{
+	min-width: 75rem;
+    min-height: 20rem;
+    font-size: 1.9rem;
+}
+
+.cross-table{
+	padding: 4.6rem 1.5rem;
+}
+
+.cross-table table{
+	min-width: 65rem;
+    min-height: 30rem;
+    font-size: 2.9rem;
+}
